@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: javapoc-deployment
+  labels:
+    app: javapoc
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: javapoc
+  template:
+    metadata:
+      labels:
+        app: javapoc
+    spec:
+      containers:
+      - name: javapoc
+        image: nareedocker/javapoc
+        ports:
+        - containerPort: 8080
+          hostPort: 8001
