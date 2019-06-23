@@ -1,3 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: javapoc-service
+spec:
+  selector:
+    app: javapoc
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 9376
+
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
